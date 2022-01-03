@@ -8,7 +8,7 @@ const Todo = ({ id, title, isCompleted, toggleCompletion }) => {
   return (
     <li
       className={`rounded relative my-4 p-4 ${
-        isCompleted ? "bg-green-200" : "bg-gray-300"
+        isCompleted ? "bg-green-300" : "bg-gray-300"
       }`}
     >
       <Card>

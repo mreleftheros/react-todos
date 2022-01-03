@@ -4,7 +4,7 @@ import { TodosContext } from "../contexts/TodosContext";
 const Button = ({ children, id, type }) => {
   const { toggleCompletion } = useContext(TodosContext);
 
-  const handleClick = id => {
+  const handleClick = () => {
     switch (type) {
       case "toggle":
         return toggleCompletion(id);

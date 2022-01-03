@@ -9,12 +9,18 @@ const TodosContextProvider = ({ children }) => {
     { id: 2, title: "go for coffee", isCompleted: true }
   ]);
 
-  const toggleCompletion = (id) => {
-    console.log(id);
-  }
+  const toggleCompletion = id => {
+    setTodos(
+      todos.map(todo =>
+        todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : todo
+      )
+    );
+  };
 
   return (
-    <TodosContext.Provider value={todos, toggleCompletion}>{children}</TodosContext.Provider>
+    <TodosContext.Provider value={{ todos, toggleCompletion }}>
+      {children}
+    </TodosContext.Provider>
   );
 };
 

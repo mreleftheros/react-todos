@@ -4,9 +4,9 @@ import { useForm } from "../components/hooks/useForm";
 import Button from "./shared/Button";
 import { FaTimes } from "react-icons/fa";
 
-const Modal = ({ toggleEditMode }) => {
+const Modal = () => {
   const { itemEdited, updateItem } = useContext(TodosContext);
-  const [ state, updateState ] = useForm({
+  const [state, updateState] = useForm({
     text: itemEdited.title
   });
 
@@ -18,7 +18,6 @@ const Modal = ({ toggleEditMode }) => {
     e.preventDefault();
 
     updateItem(state.text);
-    toggleEditMode();
   };
 
   return (

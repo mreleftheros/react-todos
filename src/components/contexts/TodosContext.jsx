@@ -31,7 +31,14 @@ const TodosContextProvider = ({ children }) => {
 
   return (
     <TodosContext.Provider
-      value={{ todos, toggleCompletion, itemEdited, editTodo, updateItem }}
+      value={{
+        todos,
+        toggleCompletion,
+        itemEdited,
+        editTodo,
+        updateItem,
+        setItemEdited
+      }}
     >
       {children}
     </TodosContext.Provider>

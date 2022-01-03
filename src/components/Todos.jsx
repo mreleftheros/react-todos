@@ -5,7 +5,15 @@ import Todo from "./Todo";
 
 const Todos = () => {
   const { todos, itemEdited } = useContext(TodosContext);
-  // const [editMode, setEditMode] = useState(false);
+  const [editMode, setEditMode] = useState(false);
+
+  useEffect(() => {
+    if (!itemEdited) {
+      setEditMode(false);
+    } else {
+      setEditMode(true);
+    }
+  }, [itemEdited]);
 
   if (!todos || todos.length === 0) {
     return (
@@ -19,7 +27,7 @@ const Todos = () => {
       {todos.map(todo => (
         <Todo key={todo.id} {...todo} />
       ))}
-      {/* {itemEdited && <Modal item={itemEdited} />} */}
+      {itemEdited && <Modal />}
     </ul>
   );
 };

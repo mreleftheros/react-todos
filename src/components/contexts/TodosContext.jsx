@@ -19,7 +19,7 @@ const TodosContextProvider = ({ children }) => {
   };
 
   const editTodo = id => {
-    setItemEdited(todos.filter(todo => todo.id === id));
+    setItemEdited(todos.filter(todo => todo.id === id)[0]);
   };
 
   const updateItem = () => {};

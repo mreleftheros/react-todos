@@ -1,8 +1,10 @@
 import Card from "./shared/Card";
-import { FaCheck, FaEdit, FaTimes } from "react-icons/fa";
+import { FaEdit, FaTimes, FaToggleOff, FaToggleOn } from "react-icons/fa";
 import Button from "./shared/Button";
 
-const Todo = ({ title, isCompleted }) => {
+const Todo = ({ id, title, isCompleted, toggleCompletion }) => {
+  const size = "20";
+
   return (
     <li
       className={`rounded relative my-4 p-4 ${
@@ -12,14 +14,18 @@ const Todo = ({ title, isCompleted }) => {
       <Card>
         <h2 className="text-center font-bold text-2xl">{title}</h2>
         <div className="absolute flex w-52 top-0 left-full transform -translate-x-full mr-4 mt-2 justify-around">
-          <Button>
-            <FaCheck color="green" />
+          <Button id={id} type="toggle">
+            {isCompleted ? (
+              <FaToggleOn size={size} color="orange" />
+            ) : (
+              <FaToggleOff size={size} color="orange" />
+            )}
           </Button>
-          <Button>
-            <FaEdit color="orange" />
+          <Button type="edit">
+            <FaEdit size={size} color="orange" />
           </Button>
-          <Button>
-            <FaTimes color="orange" />
+          <Button type="delete">
+            <FaTimes size={size} color="orange" />
           </Button>
         </div>
       </Card>

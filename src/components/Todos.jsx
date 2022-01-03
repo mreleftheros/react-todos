@@ -3,7 +3,7 @@ import { TodosContext } from "./contexts/TodosContext";
 import Todo from "./Todo";
 
 const Todos = () => {
-  const todos = useContext(TodosContext);
+  const { todos} = useContext(TodosContext);
 
   if (!todos || todos.length === 0) {
     return (

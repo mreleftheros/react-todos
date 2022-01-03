@@ -9,8 +9,12 @@ const TodosContextProvider = ({ children }) => {
     { id: 2, title: "go for coffee", isCompleted: true }
   ]);
 
+  const toggleCompletion = (id) => {
+    console.log(id);
+  }
+
   return (
-    <TodosContext.Provider value={todos}>{children}</TodosContext.Provider>
+    <TodosContext.Provider value={todos, toggleCompletion}>{children}</TodosContext.Provider>
   );
 };
 

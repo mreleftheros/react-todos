@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 /*! tailwindcss v2.2.19 | MIT License | https://tailwindcss.com */
 
 /*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
@@ -594,39 +596,44 @@ video {
   display: none;
 }
 
-.row-span-1 {
+.row-span-6{
+  grid-row: span 6 / span 6;
+}
+
+.row-span-1{
   grid-row: span 1 / span 1;
 }
 
-.grid {
+.flex{
+  display: flex;
+}
+
+.grid{
   display: grid;
 }
 
-.min-h-screen {
+.h-full{
+  height: 100%;
+}
+
+.min-h-screen{
   min-height: 100vh;
 }
 
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgba(0, 0, 0, var(--tw-bg-opacity));
+.justify-between{
+  justify-content: space-between;
 }
 
-.bg-red-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgba(239, 68, 68, var(--tw-bg-opacity));
-}
-
-.bg-gray-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgba(107, 114, 128, var(--tw-bg-opacity));
-}
-
-.bg-gray-800 {
+.bg-gray-800{
   --tw-bg-opacity: 1;
   background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
 }
 
-.text-red-400 {
-  --tw-text-opacity: 1;
-  color: rgba(248, 113, 113, var(--tw-text-opacity));
+.bg-gray-500{
+  --tw-bg-opacity: 1;
+  background-color: rgba(107, 114, 128, var(--tw-bg-opacity));
+}
+
+.p-2{
+  padding: 0.5rem;
 }

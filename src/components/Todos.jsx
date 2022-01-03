@@ -1,9 +1,11 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { TodosContext } from "./contexts/TodosContext";
+import Modal from "./Modal";
 import Todo from "./Todo";
 
 const Todos = () => {
-  const { todos} = useContext(TodosContext);
+  const { todos, itemEdited } = useContext(TodosContext);
+  // const [editMode, setEditMode] = useState(false);
 
   if (!todos || todos.length === 0) {
     return (
@@ -17,6 +19,7 @@ const Todos = () => {
       {todos.map(todo => (
         <Todo key={todo.id} {...todo} />
       ))}
+      {itemEdited && <Modal item={itemEdited} />}
     </ul>
   );
 };

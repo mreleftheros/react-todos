@@ -2,12 +2,16 @@ import { useContext } from "react";
 import { TodosContext } from "../contexts/TodosContext";
 
 const Button = ({ children, id, type }) => {
-  const { toggleCompletion } = useContext(TodosContext);
+  const { toggleCompletion, editTodo } = useContext(TodosContext);
 
   const handleClick = () => {
     switch (type) {
       case "toggle":
-        return toggleCompletion(id);
+        toggleCompletion(id);
+        break;
+      case "edit":
+        editTodo(id);
+        break;
     }
   };
 

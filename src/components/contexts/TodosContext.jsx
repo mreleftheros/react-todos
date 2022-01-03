@@ -8,6 +8,7 @@ const TodosContextProvider = ({ children }) => {
     { id: 1, title: "go to the gym", isCompleted: false },
     { id: 2, title: "go for coffee", isCompleted: true }
   ]);
+  const [itemEdited, setItemEdited] = useState(null);
 
   const toggleCompletion = id => {
     setTodos(
@@ -17,8 +18,16 @@ const TodosContextProvider = ({ children }) => {
     );
   };
 
+  const editTodo = id => {
+    setItemEdited(todos.filter(todo => todo.id === id));
+  };
+
+  const updateItem = () => {};
+
   return (
-    <TodosContext.Provider value={{ todos, toggleCompletion }}>
+    <TodosContext.Provider
+      value={{ todos, toggleCompletion, itemEdited, editTodo, updateItem }}
+    >
       {children}
     </TodosContext.Provider>
   );

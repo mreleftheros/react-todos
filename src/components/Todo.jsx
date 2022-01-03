@@ -2,7 +2,7 @@ import Card from "./shared/Card";
 import { FaEdit, FaTimes, FaToggleOff, FaToggleOn } from "react-icons/fa";
 import Button from "./shared/Button";
 
-const Todo = ({ id, title, isCompleted, toggleCompletion }) => {
+const Todo = ({ id, title, isCompleted, editMode }) => {
   const size = "20";
 
   return (

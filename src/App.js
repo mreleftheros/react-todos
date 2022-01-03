@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import TodosContextProvider from "./components/contexts/TodosContext";
 import Header from "./components/Header";
 import Home from "./components/pages/Home";
-import New from "./components/pages/New";
+import NewTodo from "./components/pages/NewTodo";
 
 const App = () => {
   return (
@@ -12,7 +12,7 @@ const App = () => {
         <main className="row-span-6">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/new" element={<New />} />
+            <Route path="/new" element={<NewTodo />} />
           </Routes>
         </main>
       </div>

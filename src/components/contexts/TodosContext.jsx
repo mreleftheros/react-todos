@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useRef } from "react";
 
 export const TodosContext = createContext();
 
@@ -8,6 +8,7 @@ const TodosContextProvider = ({ children }) => {
     { id: 1, title: "go to the gym", isCompleted: false },
     { id: 2, title: "go for coffee", isCompleted: true }
   ]);
+  const todosId = useRef(todos.length);
   const [itemEdited, setItemEdited] = useState(null);
 
   const toggleCompletion = id => {
@@ -42,7 +43,9 @@ const TodosContextProvider = ({ children }) => {
         editTodo,
         updateItem,
         setItemEdited,
-        deleteTodo
+        deleteTodo,
+        setTodos,
+        todosId
       }}
     >
       {children}

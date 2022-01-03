@@ -1,4 +1,4 @@
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useRef } from "react";
 import { TodosContext } from "./contexts/TodosContext";
 import { useForm } from "../components/hooks/useForm";
 import Button from "./shared/Button";
@@ -9,6 +9,11 @@ const Modal = () => {
   const [state, updateState] = useForm({
     text: itemEdited.title
   });
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    inputRef.current.select();
+  }, []);
 
   const handleChange = e => {
     updateState(e);
@@ -29,11 +34,12 @@ const Modal = () => {
       >
         <h2 className="text-center text-3xl p-2 mb-4 font-bold">Edit item</h2>
         <input
+          ref={inputRef}
           type="text"
           name="text"
           value={state.text}
           onChange={handleChange}
-          className="py-2 px-4 border-2 rounded-xl"
+          className="py-2 px-4 border-2 rounded-xl outline-none text-center"
         />
         <Button type="submit">
           <span className="text-white">Update</span>

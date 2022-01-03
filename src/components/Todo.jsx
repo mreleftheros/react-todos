@@ -12,7 +12,7 @@ const Todo = ({ id, title, isCompleted, editMode }) => {
       }`}
     >
       <Card>
-        <h2 className="text-center font-bold text-2xl">{title}</h2>
+        <h2 className="text-center font-bold text-2xl select-none">{title}</h2>
         <div className="absolute flex w-52 top-0 left-full transform -translate-x-full mr-4 mt-2 justify-around">
           <Button id={id} type="toggle">
             {isCompleted ? (

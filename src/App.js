@@ -7,7 +7,7 @@ import New from "./components/pages/New";
 const App = () => {
   return (
     <TodosContextProvider>
-      <div className="bg-gray-800 min-h-screen grid">
+      <div className="bg-gray-800 min-h-screen grid grid-rows-6">
         <Header />
         <main className="row-span-6">
           <Routes>

@@ -2,7 +2,7 @@ import Navbar from "./Navbar";
 
 const Header = () => {
   return (
-    <header className="row-span-1 bg-gray-500 p-2">
+    <header className="bg-gray-500 p-2 row-span-1">
       <Navbar logoText="Todos" />
     </header>
   );

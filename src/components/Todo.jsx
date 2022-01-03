@@ -21,10 +21,10 @@ const Todo = ({ id, title, isCompleted, editMode }) => {
               <FaToggleOff size={size} color="orange" />
             )}
           </Button>
-          <Button type="edit">
+          <Button id={id} type="edit">
             <FaEdit size={size} color="orange" />
           </Button>
-          <Button type="delete">
+          <Button id={id} type="delete">
             <FaTimes size={size} color="orange" />
           </Button>
         </div>

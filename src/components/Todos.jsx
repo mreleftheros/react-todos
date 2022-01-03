@@ -19,7 +19,7 @@ const Todos = () => {
       {todos.map(todo => (
         <Todo key={todo.id} {...todo} />
       ))}
-      {itemEdited && <Modal item={itemEdited} />}
+      {/* {itemEdited && <Modal item={itemEdited} />} */}
     </ul>
   );
 };

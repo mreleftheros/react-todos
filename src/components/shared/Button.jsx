@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { TodosContext } from "../contexts/TodosContext";
 
 const Button = ({ children, id, type }) => {
-  const { toggleCompletion, editTodo, setItemEdited } =
+  const { toggleCompletion, editTodo, setItemEdited, deleteTodo } =
     useContext(TodosContext);
 
   const handleClick = () => {
@@ -15,6 +15,9 @@ const Button = ({ children, id, type }) => {
         break;
       case "closeModal":
         setItemEdited(false);
+        break;
+      case "delete":
+        deleteTodo(id);
         break;
     }
   };

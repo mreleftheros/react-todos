@@ -29,6 +29,10 @@ const TodosContextProvider = ({ children }) => {
     setItemEdited(null);
   };
 
+  const deleteTodo = id => {
+    setTodos(todos.filter(todo => todo.id !== id));
+  };
+
   return (
     <TodosContext.Provider
       value={{
@@ -37,7 +41,8 @@ const TodosContextProvider = ({ children }) => {
         itemEdited,
         editTodo,
         updateItem,
-        setItemEdited
+        setItemEdited,
+        deleteTodo
       }}
     >
       {children}

@@ -22,7 +22,12 @@ const TodosContextProvider = ({ children }) => {
     setItemEdited(todos.filter(todo => todo.id === id)[0]);
   };
 
-  const updateItem = () => {};
+  const updateItem = title => {
+    setTodos(
+      todos.map(todo => (todo.id === itemEdited.id ? { ...todo, title } : todo))
+    );
+    setItemEdited(null);
+  };
 
   return (
     <TodosContext.Provider

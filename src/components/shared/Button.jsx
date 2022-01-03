@@ -19,7 +19,7 @@ const Button = ({ children, id, type }) => {
     <button
       type={type === "submit" ? "submit" : "button"}
       onClick={handleClick}
-      className="bg-gray-800 px-3 py-2 transition-transform duration-150 ease-in-out hover:scale-95 rounded-xl shadow"
+      className={`${type === "closeModal" ? "bg-red-600" : "bg-gray-800"} px-3 py-2 transition-transform duration-150 ease-in-out hover:scale-95 rounded-xl shadow`}
     >
       {children}
     </button>

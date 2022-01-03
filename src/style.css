@@ -653,6 +653,10 @@ video {
   width: 75%;
 }
 
+.w-full {
+  width: 100%;
+}
+
 .list-none {
   list-style-type: none;
 }
@@ -675,6 +679,14 @@ video {
 
 .rounded {
   border-radius: 0.25rem;
+}
+
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
 }
 
 .border-b-4 {

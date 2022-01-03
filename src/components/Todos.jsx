@@ -6,6 +6,7 @@ import Todo from "./Todo";
 const Todos = () => {
   const { todos, itemEdited } = useContext(TodosContext);
   const [editMode, setEditMode] = useState(false);
+  const [deleteMode, setDeleteMode] = useState(false);
 
   useEffect(() => {
     if (!itemEdited) {

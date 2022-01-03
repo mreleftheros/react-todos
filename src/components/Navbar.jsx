@@ -1,9 +1,14 @@
-const Navbar = () => {
-  return (
-    <nav className="h-full flex justify-between">
-      
-    </nav>
-  )
-}
+import NavLinks from "./NavLinks";
 
-export default Navbar
+const Navbar = ({ logoText }) => {
+  return (
+    <nav className="h-full flex justify-between items-center">
+      <div>
+        <h2 className="font-mono text-2xl italic">{logoText}</h2>
+      </div>
+      <NavLinks />
+    </nav>
+  );
+};
+
+export default Navbar;
